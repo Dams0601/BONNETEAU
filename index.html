@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BONNETEAU - LE JEU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="accueil">
+        <h1 class="big-title">BONNETEAU</h1>
+    </header>
+
+    <div class="regles">
+        <h2 class="title">Règles</h2>
+        <p><span class="step">Étape 1 : </span>Appuie sur le bouton "Démarrer" pour lancer la partie.</p>
+        <p><span class="step">Étape 2 : </span>Un jeton est alors caché derrière un des gobelets. Clique sur celui de
+            ton choix.</p>
+        <p><span class="step">Étape 3 : </span>Croise les doigts !</p>
+        <a href="#jeu"><button type="button">↓ Let's play ↓</button></a>
+    </div>
+    <div id="jeu"></div>
+    <div id="cadre">
+        <h3 class="score">TON SCORE : <span class="resultat">0</span></h3>
+        <h3 class="commentary initial">.</h3>
+        <h4 class="rappel initial">Selectionne un des gobelets</h4>
+        <div class="choices">
+            <div id="choice1">
+                <div class="circle initial"></div>
+                <div class="boule initial"></div>
+            </div>
+            <div id="choice2">
+                <div class="circle initial"></div>
+                <div class="boule initial"></div>
+            </div>
+            <div id="choice3">
+                <div class="circle initial"></div>
+                <div class="boule initial"></div>
+            </div>
+        </div>
+        <button type="button" class="submit initial">Démarrer</button>
+    </div>
+    
+
+    <footer class="footer">
+        <div class="footer-card">
+            <h2 class="footer-name">Réseaux sociaux</h2>
+            <br>
+            <div class="footer-reseaux">
+                <a href="#"><img src="images/facebook.png" alt="" width="30px"></a>
+                <a href="#"><img src="images/instagram.png" alt="" width="30px"></a>
+                <a href="#"><img src="images/twitter.png" alt="" width="30px"></a>
+            </div>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-name">Ou nous trouver ?</h2>
+            <br>
+            <p class="footer-info">49 rue de Gascogne, 95000 PONTOISE</p>
+        </div>
+        <div class="footer-card">
+            <h2 class="footer-name">Inscris-toi</h2>
+            <br>
+            <a target="_blank" href="formulaire.html"><button type="button" id="contact">Inscription</button></a>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
