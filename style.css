@@ -23,7 +23,7 @@ button:hover {
 .accueil {
     z-index: 10;
     height: 400px;
-    background: url("bg.png");
+    background: url("images/bg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,9 +98,9 @@ h1.big-title {
 
 /* CADRE */
 #cadre {
-    margin: 5% 5%;
-    padding: 5% 5%;
-    width: 90%;
+    margin: 5% 50px;
+    padding: 50px;
+    width: auto;
     background-color: #284152;
     border-radius: 50px;
 }
@@ -145,6 +145,7 @@ h1.big-title {
     color: #FFF;
     text-align: center;
     font-weight: 500;
+    margin-bottom: 200px;
 }
 
 .rappel.initial {
@@ -163,9 +164,15 @@ h1.big-title {
 .choices {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 150px; /**/
+}
+
+.choice{
+    transition: 0.7s; /**/
+    display: block;
+    position: absolute; /**/
 }
 
 /* circle */
@@ -188,6 +195,7 @@ h1.big-title {
     transform: translateY(-100px);
 }
 
+
 /* boule */
 
 .boule{
@@ -200,9 +208,9 @@ h1.big-title {
 	justify-content: center;
     font-size: 70px;
     color: #FFF;
-    transition: 1s;
 }
 .boule.initial{
+    animation-duration: 1s;
     display: none;
 }
 .boule.final{
@@ -224,7 +232,7 @@ h1.big-title {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .submit.initial{
@@ -320,15 +328,15 @@ h1.big-title {
 @media only screen and (max-width: 680px){
     /* GOBELETS */
     .circle {
-        width: 80px;
-        height: 80px;
-        border-radius: 40px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
     }
 
     .boule {
-        width: 80px;
-        height: 80px;
-        border-radius: 40px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
         font-size: 40px;
     }
 
