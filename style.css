@@ -162,11 +162,9 @@ h1.big-title {
 
 /* GOBELETS */
 .choices {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
     margin-top: 150px; /**/
+	margin-bottom: 150px;
 }
 
 .choice{
