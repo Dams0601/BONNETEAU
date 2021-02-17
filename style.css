@@ -145,7 +145,6 @@ h1.big-title {
     color: #FFF;
     text-align: center;
     font-weight: 500;
-    margin-bottom: 200px;
 }
 
 .rappel.initial {
@@ -163,13 +162,12 @@ h1.big-title {
 /* GOBELETS */
 .choices {
     position: relative;
-    margin-top: 150px; /**/
-	margin-bottom: 150px;
+    height: 320px;
 }
 
 .choice{
-    transition: 0.7s; /**/
     display: block;
+    bottom:0;
     position: absolute; /**/
 }
 
@@ -180,7 +178,7 @@ h1.big-title {
     border-radius: 75px;
     background: rgb(170, 170, 170);
     border: 1px solid rgb(170, 170, 170);
-    transition: 1s;
+    transition: .5s;
     cursor: pointer;
 }
 
@@ -230,7 +228,7 @@ h1.big-title {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .submit.initial{
@@ -348,5 +346,21 @@ h1.big-title {
     }
     .footer-card:last-child {
         margin-bottom:0;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    /* GOBELETS */
+    .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+    }
+
+    .boule {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        font-size: 40px;
     }
 }

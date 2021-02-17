@@ -6,16 +6,11 @@ var gobBoules = document.querySelectorAll('.choices');
 var click = 0;
 var score = 0;
 
-// fonctions
-function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-};
-
 // Réorganisation des gobelets au chargement
 var largeurCadre = document.querySelector('#cadre').offsetWidth - 250;
-gobBoule[0].style.left = "100px";
-gobBoule[1].style.left = (largeurCadre / 2) + 100 + 'px';
-gobBoule[2].style.left = largeurCadre + 100 + 'px';
+gobBoule[0].style.left = "0px";
+gobBoule[1].style.left = (largeurCadre / 2) + 'px';
+gobBoule[2].style.left = largeurCadre + 'px';
 
 /***************************************************************************************************************/
 
@@ -59,49 +54,54 @@ document.querySelector('.submit').addEventListener('click', function (e) {
     boules[generation].innerHTML = "⚪";
 
     // Fonction qui permet de lever le gobelet pour voir ou se trouve la balle
-    setTimeout(function () {
-        circles[generation].classList.remove('initial');
-        circles[generation].classList.add('final');
-        boules[generation].classList.remove('initial');
-        boules[generation].classList.add('final');
-    }, 750)
 
-    // Fonction qui permet de rabaisser le gobelet pour commencer la partie
+    setTimeout(function () {
+    circles[generation].classList.remove('initial');
+    circles[generation].classList.add('final');
+    boules[generation].classList.remove('initial');
+    boules[generation].classList.add('final');
+    }, 500)
+
     setTimeout(function () {
         circles[generation].classList.remove('final');
         circles[generation].classList.add('initial');
         boules[generation].classList.remove('final');
         boules[generation].classList.add('initial');
-    }, 1500)
+    }, 1000)
+
+
+
 
     // Mélanger les gobelets => le nombre de mélage sera aléatoire entre 5 et 7
-    setTimeout(function () {
-        var terminus = Math.floor(Math.random() * 3) + 5; // nbr de mélange
-        var i = 0; // numéro du mélange en cours
-        var shuffle = setInterval(function () {
-            var numGob1 = Math.floor(Math.random() * 3); // Choix n°1 du gobelet
-            var numGob2 = Math.floor(Math.random() * 3);
-            while (numGob1 == numGob2) {
-                numGob2 = Math.floor(Math.random() * 3) // Choix n°2 du gobelet
-            }
-            
-            // Affectation des positions à l'état actuel
-            var largeur1 = gobBoule[numGob1].style.left
-            var largeur2 = gobBoule[numGob2].style.left
+    var terminus = Math.floor(Math.random() * 3) + 6; // nbr de mélange
+    var i = 0; // numéro du mélange en cours
+    var shuffle = setInterval(function () {
+        var numGob1 = Math.floor(Math.random() * 3); // Choix n°1 du gobelet
+        var numGob2 = Math.floor(Math.random() * 3);
+        while (numGob1 == numGob2) {
+            numGob2 = Math.floor(Math.random() * 3) // Choix n°2 du gobelet
+        }
 
-            // Permutation des places
-            $(gobBoule[numGob1]).animate({
-                left: largeur2,
-            }, "fast");
-            $(gobBoule[numGob2]).animate({
-                left: largeur1,
-            }, "fast");
-            i++;
-            if (i > terminus) {
-                clearInterval(shuffle); // Arrete le mélange
-            }
-        }, 1000)// Toutes les 1s => sachant que le changement de position dure 0.7s (voir css : .choice)
-    }, 1600)// Attend la fin de la présentation de l'emplacement de la boule
+        // Affectation des positions à l'état actuel
+        var largeur1 = gobBoule[numGob1].style.left
+        var largeur2 = gobBoule[numGob2].style.left
+
+        // Permutation des places
+        $(gobBoule[numGob1]).animate({
+            left: largeur2,
+            easing: "swing",
+        }, 1100)
+        $(gobBoule[numGob2]).animate({
+            left: largeur1,
+            easing: "swing"
+        }, 1100);
+
+        i++;
+        if (i > terminus) {
+            clearInterval(shuffle); // Arrete le mélange
+        }
+    }, 1100) // Toutes les 1s => sachant que le changement de position dure 0.7s (voir css : .choice)
+
 
 
 
@@ -109,10 +109,9 @@ document.querySelector('.submit').addEventListener('click', function (e) {
 
     // Ajoute 1 au click après le mélange
     setTimeout(function () {
-            click++;
-            document.querySelector('.rappel').innerHTML = "Selectionne un des gobelets";
-        },
-        10000)
+        click++;
+        document.querySelector('.rappel').innerHTML = "Selectionne un des gobelets";
+    }, 10000)
 })
 
 
